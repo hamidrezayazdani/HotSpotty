@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotSpotty Interactive Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/hotspotty.css">
+    <script src="src/hotspotty.js"></script>
+    <style>
+        .showcase-section {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4 text-blue-600">HotSpotty Showcase</h1>
+            <p class="text-xl text-gray-600">Interactive Image Annotation Reimagined</p>
+        </header>
+
+        <section class="showcase-section">
+            <h2 class="text-2xl font-semibold mb-6">Product Showcase</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div id="product-container" class="hotspotty-container relative">
+                    <img src="imgs/amazon-product-image.jpg" alt="Product Overview" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Smart Device Features</h3>
+                    <p class="mb-4">Hover or click on the image to explore key features of our innovative smart device.</p>
+                    <div class="space-y-2">
+                        <div class="bg-white p-3 rounded shadow">
+                            <strong>💡 Interactive Annotations</strong>
+                            <p class="text-sm text-gray-600">Discover device details with intuitive hotspots</p>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow">
+                            <strong>🔍 Precise Positioning</strong>
+                            <p class="text-sm text-gray-600">Pinpoint exact locations of interest</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase-section">
+            <h2 class="text-2xl font-semibold mb-6">Educational Interactive Map</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Global Landmarks</h3>
+                    <p class="mb-4">An interactive world map showcasing iconic locations with detailed information.</p>
+                    <div class="space-y-2">
+                        <div class="bg-white p-3 rounded shadow">
+                            <strong>🌍 Global Exploration</strong>
+                            <p class="text-sm text-gray-600">Discover landmarks with contextual annotations</p>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow">
+                            <strong>📊 Multi-Mode Interaction</strong>
+                            <p class="text-sm text-gray-600">Switch between display and admin modes</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="world-map-container" class="hotspotty-container relative">
+                    <img src="imgs/freepik-com-free-vector-creative-scribbled-world-map-1095025-htm.jpg" alt="World Map" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase-section">
+            <h2 class="text-2xl font-semibold mb-6">Interactive Controls</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold mb-2">🎨 Customization</h3>
+                    <p class="text-sm">Choose from multiple icons, colors, and animations</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold mb-2">💾 Persistent Storage</h3>
+                    <p class="text-sm">Automatically save and restore hotspot configurations</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold mb-2">🔄 Dynamic Updates</h3>
+                    <p class="text-sm">Add, remove, or modify hotspots in real-time</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Product Showcase Hotspotty
+            const productHotspotty = HotSpottyManager.create('#product-container', {
+                mode: 'display',
+                initialSpots: [
+                    {
+                        x: 75, y: 80,
+                        title: 'Battery Module',
+                        message: 'High-capacity lithium-ion battery with fast charging',
+                        icon: '🔋',
+                        color: '#2ECC71',
+                        animation: 'pulse'
+                    },
+                    {
+                        x: 30, y: 40,
+                        title: 'Camera System',
+                        message: 'Advanced multi-lens camera with AI enhancement',
+                        icon: '📷',
+                        color: '#3498DB',
+                        animation: 'bounce'
+                    }
+                ]
+            });
+
+            // World Map Hotspotty
+            const worldMapHotspotty = HotSpottyManager.create('#world-map-container', {
+                mode: 'display',
+                initialSpots: [
+                    {
+                        x: 45, y: 45,
+                        title: 'Eiffel Tower',
+                        message: 'Iconic landmark in Paris, France',
+                        icon: '🗼',
+                        color: '#E74C3C'
+                    },
+                    {
+                        x: 67, y: 55,
+                        title: 'Taj Mahal',
+                        message: 'Magnificent marble mausoleum in Agra, India',
+                        icon: '🕌',
+                        color: '#9B59B6'
+                    },
+                    {
+                        x: 75, y: 52,
+                        title: 'Great Wall',
+                        message: 'Ancient fortification spanning across China',
+                        icon: '🏯',
+                        color: '#F39C12'
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
