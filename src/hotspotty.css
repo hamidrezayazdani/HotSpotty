@@ -1,78 +1,88 @@
 :root {
-    --hotspotty-primary-color: #1ABC9C;
-    --hotspotty-tooltip-bg: rgba(0, 0, 0, 0.7);
-    --hotspotty-tooltip-text: white;
+  --hotspotty-primary-color: #1ABC9C;
+  --hotspotty-tooltip-bg: rgba(0, 0, 0, 0.7);
+  --hotspotty-tooltip-text: white;
 }
 
-.hotspotty-container { 
-    position: relative; 
-    max-width: 100%; 
-    overflow: hidden;
+.hotspotty-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .hotspotty-marker {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 10;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
 }
 
-.hotspotty-marker.pulse { 
-    animation: hotspotty-pulse 1.5s infinite; 
+.hotspotty-marker.pulse {
+  animation: hotspotty-pulse 1.5s infinite;
 }
 
-.hotspotty-marker.bounce { 
-    animation: hotspotty-bounce 1s infinite; 
+.hotspotty-marker.bounce {
+  animation: hotspotty-bounce 1s infinite;
 }
 
 .hotspotty-tooltip {
-    display: none;
-    position: absolute;
-    background: var(--hotspotty-tooltip-bg);
-    color: var(--hotspotty-tooltip-text);
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 20;
-    max-width: 200px;
-    word-wrap: break-word;
-    left: 120%;
-    top: 50%;
-    transform: translateY(-50%);
+  display: none;
+  position: absolute;
+  background: var(--hotspotty-tooltip-bg);
+  color: var(--hotspotty-tooltip-text);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 20;
+  max-width: 200px;
+  word-wrap: break-word;
+  left: 120%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.hotspotty-marker:hover .hotspotty-tooltip { 
-    display: block; 
+.hotspotty-marker:hover .hotspotty-tooltip {
+  display: block;
 }
 
 .hotspotty-hidden-input {
-    display: none;
+  display: none;
 }
 
 @keyframes hotspotty-pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes hotspotty-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 768px) {
-    .hotspotty-marker { 
-        width: 15px; 
-        height: 15px; 
-    }
+  .hotspotty-marker {
+    width: 15px;
+    height: 15px;
+  }
 
-    .hotspotty-tooltip {
-        left: 100%;
-        max-width: 150px;
-    }
+  .hotspotty-tooltip {
+    left: 100%;
+    max-width: 150px;
+  }
 }
